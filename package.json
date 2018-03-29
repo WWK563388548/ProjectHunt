@@ -1,0 +1,22 @@
+{
+  "name": "projecthunt",
+  "version": "1.0.0",
+  "description": "A web application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/express-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WWK563388548/ProjectHunt.git"
+  },
+  "author": "wwk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WWK563388548/ProjectHunt/issues"
+  },
+  "homepage": "https://github.com/WWK563388548/ProjectHunt#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
