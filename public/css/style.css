@@ -340,4 +340,31 @@
     display: none;
   }
 
-  
+  /*---------------------------CUSTOM-------------------------------*/
+  body {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    font-size: 13px;
+    color: #444444;
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 70;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+a {
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+}
