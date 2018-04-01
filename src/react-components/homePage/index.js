@@ -49,7 +49,6 @@ class HomePage extends React.Component {
                                     <span>
                                         <i className="fas fa-thumbs-up"></i>
                                     </span>
-                                    <br/>
                                     {this.state.productList[0].upvote}
                                 </a>
                                 <img className="product-item-media" src={this.state.productList[0].media} />
@@ -61,12 +60,13 @@ class HomePage extends React.Component {
                                     <a href="#">
                                         <img className="small-avatar" src={this.state.productList[0].maker.avatar} />
                                     </a>
-                                    <a className="product-item-link" href={this.state.productList[0].link}>
+                                    
+                                </section>
+                                <a className="product-item-link" href={this.state.productList[0].link}>
                                         <span>
                                             <i className="fas fa-external-link-alt"></i>
                                         </span>
-                                    </a>
-                                </section>
+                                </a>
                             </li>
 
                             <li className="product-item">
@@ -74,7 +74,6 @@ class HomePage extends React.Component {
                                     <span>
                                         <i className="fas fa-thumbs-up"></i>
                                     </span>
-                                    <br/>
                                     {this.state.productList[1].upvote}
                                 </a>
                                 <img className="product-item-media" src={this.state.productList[1].media} />
@@ -86,12 +85,13 @@ class HomePage extends React.Component {
                                     <a href="#">
                                         <img className="small-avatar" src={this.state.productList[1].maker.avatar} />
                                     </a>
-                                    <a className="product-item-link" href={this.state.productList[1].link}>
+                                    
+                                </section>
+                                <a className="product-item-link" href={this.state.productList[1].link}>
                                         <span>
                                             <i className="fas fa-external-link-alt"></i>
                                         </span>
-                                    </a>
-                                </section>
+                                </a>
                             </li>
 
                         </ul>

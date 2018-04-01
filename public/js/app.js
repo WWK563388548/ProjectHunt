@@ -19287,7 +19287,6 @@ var HomePage = function (_React$Component) {
                                         null,
                                         _react2.default.createElement('i', { className: 'fas fa-thumbs-up' })
                                     ),
-                                    _react2.default.createElement('br', null),
                                     this.state.productList[0].upvote
                                 ),
                                 _react2.default.createElement('img', { className: 'product-item-media', src: this.state.productList[0].media }),
@@ -19312,15 +19311,15 @@ var HomePage = function (_React$Component) {
                                         'a',
                                         { href: '#' },
                                         _react2.default.createElement('img', { className: 'small-avatar', src: this.state.productList[0].maker.avatar })
-                                    ),
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'a',
+                                    { className: 'product-item-link', href: this.state.productList[0].link },
                                     _react2.default.createElement(
-                                        'a',
-                                        { className: 'product-item-link', href: this.state.productList[0].link },
-                                        _react2.default.createElement(
-                                            'span',
-                                            null,
-                                            _react2.default.createElement('i', { className: 'fas fa-external-link-alt' })
-                                        )
+                                        'span',
+                                        null,
+                                        _react2.default.createElement('i', { className: 'fas fa-external-link-alt' })
                                     )
                                 )
                             ),
@@ -19335,7 +19334,6 @@ var HomePage = function (_React$Component) {
                                         null,
                                         _react2.default.createElement('i', { className: 'fas fa-thumbs-up' })
                                     ),
-                                    _react2.default.createElement('br', null),
                                     this.state.productList[1].upvote
                                 ),
                                 _react2.default.createElement('img', { className: 'product-item-media', src: this.state.productList[1].media }),
@@ -19360,15 +19358,15 @@ var HomePage = function (_React$Component) {
                                         'a',
                                         { href: '#' },
                                         _react2.default.createElement('img', { className: 'small-avatar', src: this.state.productList[1].maker.avatar })
-                                    ),
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'a',
+                                    { className: 'product-item-link', href: this.state.productList[1].link },
                                     _react2.default.createElement(
-                                        'a',
-                                        { className: 'product-item-link', href: this.state.productList[1].link },
-                                        _react2.default.createElement(
-                                            'span',
-                                            null,
-                                            _react2.default.createElement('i', { className: 'fas fa-external-link-alt' })
-                                        )
+                                        'span',
+                                        null,
+                                        _react2.default.createElement('i', { className: 'fas fa-external-link-alt' })
                                     )
                                 )
                             )

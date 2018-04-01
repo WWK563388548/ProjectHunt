@@ -341,10 +341,10 @@
   }
 
   /*---------------------------------------- CUSTOM ----------------------------------------*/
-  body {
-    font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-    font-size: 13px;
-    color: #444444;
+    body {
+        font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+        font-size: 13px;
+        color: #444444;
     }
 
     .container {
@@ -371,7 +371,7 @@
 
     /*---------------------------------------- PROJECT LIST ----------------------------------------*/
     .product-list {
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     .product-item {
@@ -399,7 +399,7 @@
     }
 
     .product-item-info p {
-        line-height: 2px;
+        line-height: 8px;
         color: #999999;
         font-size: 14px;
     }
@@ -419,3 +419,28 @@
         height: 20px;
         border-radius: 50%;
     }
+
+    /*---------------------------------------- UPVOTE BUTTON ----------------------------------------*/
+   .upvote-button {
+       font-weight: 600;
+       margin-right: 15px;
+       width: 34px;
+       text-align: center;
+       padding: 4px 0;
+       border-radius: 4px;
+       background-color: #fff;
+   }
+
+   .upvote-button:hover {
+       color: #5e9aee;
+       font-size: 1.2em;
+   }
+
+   .upvote-button:active {
+        color: #5e9aee;
+   }
+
+   .upvote-button > * {
+       display: block;
+       padding: 3px;
+   }
