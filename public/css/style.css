@@ -444,3 +444,13 @@
        display: block;
        padding: 3px;
    }
+
+   /*---------------------------------------- LINK BUTTON ----------------------------------------*/
+   .product-item-link:hover {
+        color: #5e9aee;
+        font-size: 1.2em;
+    }
+
+    .product-item-link:active {
+        color: #5e9aee;
+    }
