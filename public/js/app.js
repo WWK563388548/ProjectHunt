@@ -19235,7 +19235,7 @@ var HomePage = function (_React$Component) {
                 link: 'https://github.com/WWK563388548/NicePoint',
                 media: '/img/nicepoint.gif',
                 upvote: 10,
-                description: 'A chinese restaurant review web application that helps international students to search delicious chinese food in Japan. Users can upload and review their favorite restaurants.',
+                description: 'A chinese restaurant review web application',
                 maker: {
                     name: 'wwk',
                     avatar: '/img/portrait.jpg'
@@ -19246,7 +19246,7 @@ var HomePage = function (_React$Component) {
                 link: 'https://github.com/WWK563388548/ShareCode.io',
                 media: '/img/ShareCode.gif',
                 upvote: 30,
-                description: 'A web application for share what you are coding/typing on the screen with other people at the same time(A collaborative editor with video call)',
+                description: 'A collaborative editor with video call',
                 maker: {
                     name: 'wwk',
                     avatar: '/img/portrait.jpg'

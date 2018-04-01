@@ -340,7 +340,7 @@
     display: none;
   }
 
-  /*---------------------------CUSTOM-------------------------------*/
+  /*---------------------------------------- CUSTOM ----------------------------------------*/
   body {
     font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
     font-size: 13px;
@@ -359,7 +359,7 @@
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 500;
     }
 
@@ -367,4 +367,55 @@
         font-size: 13px;
         color: #444444;
         text-decoration: none;
+    }
+
+    /*---------------------------------------- PROJECT LIST ----------------------------------------*/
+    .product-list {
+        margin-top: 10px;
+    }
+
+    .product-item {
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    .product-item:hover {
+        background-color: #f2f2f2;
+    }
+
+    .product-item > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .product-item-media {
+        width: 130px;
+        height: 90px;
+    }
+
+    .product-item-info {
+        padding: 0 20px;
+        height: 90px;
+    }
+
+    .product-item-info p {
+        line-height: 2px;
+        color: #999999;
+        font-size: 14px;
+    }
+
+    .product-item-link {
+        display: block;
+        width: 20px;
+        padding: 3px;
+        border-radius: 50%;
+        float: right;
+        background-color: white;
+        text-align: center;
+    }
+
+    .small-avatar {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
     }
