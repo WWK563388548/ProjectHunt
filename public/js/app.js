@@ -19200,7 +19200,7 @@ var App = function (_React$Component) {
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
 },{"./homePage":26,"react":24,"react-dom":21}],26:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -19208,7 +19208,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -19226,30 +19226,152 @@ var HomePage = function (_React$Component) {
     function HomePage() {
         _classCallCheck(this, HomePage);
 
-        return _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this));
+        var _this = _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this));
+
+        _this.state = {
+            productList: [{
+                id: 1,
+                name: 'NicePoint',
+                link: 'https://github.com/WWK563388548/NicePoint',
+                media: '/img/nicepoint.gif',
+                upvote: 10,
+                description: 'A chinese restaurant review web application that helps international students to search delicious chinese food in Japan. Users can upload and review their favorite restaurants.',
+                maker: {
+                    name: 'wwk',
+                    avatar: '/img/portrait.jpg'
+                }
+            }, {
+                id: 2,
+                name: 'ShareCode.io',
+                link: 'https://github.com/WWK563388548/ShareCode.io',
+                media: '/img/ShareCode.gif',
+                upvote: 30,
+                description: 'A web application for share what you are coding/typing on the screen with other people at the same time(A collaborative editor with video call)',
+                maker: {
+                    name: 'wwk',
+                    avatar: '/img/portrait.jpg'
+                }
+            }]
+        };
+        return _this;
     }
 
     _createClass(HomePage, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "section",
+                'section',
                 null,
                 _react2.default.createElement(
-                    "header",
+                    'header',
                     null,
-                    _react2.default.createElement("img", { src: "/img/banner.jpeg", width: "100%" })
+                    _react2.default.createElement('img', { src: '/img/banner.jpeg', width: '100%' })
                 ),
                 _react2.default.createElement(
-                    "section",
+                    'section',
                     null,
                     _react2.default.createElement(
-                        "section",
-                        { className: "container" },
+                        'section',
+                        { className: 'container' },
                         _react2.default.createElement(
-                            "h2",
-                            null,
-                            "ProductList"
+                            'ul',
+                            { className: 'product-list' },
+                            _react2.default.createElement(
+                                'li',
+                                { className: 'product-item' },
+                                _react2.default.createElement(
+                                    'a',
+                                    { className: 'upvote-button', href: '#' },
+                                    _react2.default.createElement(
+                                        'span',
+                                        null,
+                                        _react2.default.createElement('i', { className: 'fas fa-thumbs-up' })
+                                    ),
+                                    _react2.default.createElement('br', null),
+                                    this.state.productList[0].upvote
+                                ),
+                                _react2.default.createElement('img', { className: 'product-item-media', src: this.state.productList[0].media }),
+                                _react2.default.createElement(
+                                    'section',
+                                    { className: 'product-item-info' },
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        _react2.default.createElement(
+                                            'h2',
+                                            null,
+                                            this.state.productList[0].name
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        this.state.productList[0].description
+                                    ),
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        _react2.default.createElement('img', { className: 'small-avatar', src: this.state.productList[0].maker.avatar })
+                                    ),
+                                    _react2.default.createElement(
+                                        'a',
+                                        { className: 'product-item-link', href: this.state.productList[0].link },
+                                        _react2.default.createElement(
+                                            'span',
+                                            null,
+                                            _react2.default.createElement('i', { className: 'fas fa-external-link-alt' })
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                { className: 'product-item' },
+                                _react2.default.createElement(
+                                    'a',
+                                    { className: 'upvote-button', href: '#' },
+                                    _react2.default.createElement(
+                                        'span',
+                                        null,
+                                        _react2.default.createElement('i', { className: 'fas fa-thumbs-up' })
+                                    ),
+                                    _react2.default.createElement('br', null),
+                                    this.state.productList[1].upvote
+                                ),
+                                _react2.default.createElement('img', { className: 'product-item-media', src: this.state.productList[1].media }),
+                                _react2.default.createElement(
+                                    'section',
+                                    { className: 'product-item-info' },
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        _react2.default.createElement(
+                                            'h2',
+                                            null,
+                                            this.state.productList[1].name
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        this.state.productList[1].description
+                                    ),
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        _react2.default.createElement('img', { className: 'small-avatar', src: this.state.productList[1].maker.avatar })
+                                    ),
+                                    _react2.default.createElement(
+                                        'a',
+                                        { className: 'product-item-link', href: this.state.productList[1].link },
+                                        _react2.default.createElement(
+                                            'span',
+                                            null,
+                                            _react2.default.createElement('i', { className: 'fas fa-external-link-alt' })
+                                        )
+                                    )
+                                )
+                            )
                         )
                     )
                 )
