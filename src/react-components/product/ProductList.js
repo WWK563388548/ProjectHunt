@@ -1,59 +1,16 @@
 import React from 'react';
+import ProductItem from './ProductItem';
 
 class ProductList extends React.Component {
     render() {
+        // 便利所有ProductItem并显示它们
         return (
             <ul className="product-list">
-                <li className="product-item">
-                    <a className="upvote-button" href="#">
-                        <span>
-                            <i className="fas fa-thumbs-up"></i>
-                        </span>
-                        {this.props.productList[0].upvote}
-                    </a>
-                    <img className="product-item-media" src={this.props.productList[0].media} />
-                    <section className="product-item-info">
-                        <a href="#">
-                            <h2>{this.props.productList[0].name}</h2>
-                        </a>
-                        <p>{this.props.productList[0].description}</p>
-                        <a href="#">
-                            <img className="small-avatar" src={this.props.productList[0].maker.avatar} />
-                        </a>
-                                    
-                    </section>
-                    <a className="product-item-link" href={this.props.productList[0].link}>
-                        <span>
-                            <i className="fas fa-external-link-alt"></i>
-                        </span>
-                    </a>
-                </li>
-
-                <li className="product-item">
-                    <a className="upvote-button" href="#">
-                        <span>
-                            <i className="fas fa-thumbs-up"></i>
-                        </span>
-                        {this.props.productList[1].upvote}
-                    </a>
-                    <img className="product-item-media" src={this.props.productList[1].media} />
-                    <section className="product-item-info">
-                        <a href="#">
-                            <h2>{this.props.productList[1].name}</h2>
-                        </a>
-                        <p>{this.props.productList[1].description}</p>
-                        <a href="#">
-                            <img className="small-avatar" src={this.props.productList[1].maker.avatar} />
-                        </a>
-                                    
-                    </section>
-                        <a className="product-item-link" href={this.props.productList[1].link}>
-                            <span>
-                                <i className="fas fa-external-link-alt"></i>
-                            </span>
-                        </a>
-                </li>
-
+                {
+                    this.props.productList.map(function(item, idx){
+                        return <ProductItem key={idx} {...item} />
+                    });
+                }
             </ul>
         );
     }
