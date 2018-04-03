@@ -454,3 +454,52 @@
     .product-item-link:active {
         color: #5e9aee;
     }
+
+    /*---------------------------------------- NAVBAR -------------------------------------------*/
+    .login-btn {
+       padding-top: 9px;
+       color: #999999;
+       font-weight: 500;
+       font-size: 11px;
+       display: block;
+    }
+
+    .login-btn:hover {
+        color: #da552f;
+    }
+
+    .navbar {
+        text-align: center;
+        padding: 10px 10px 5px;
+    }
+
+    .navbar .left-side {
+        float: left;
+    }
+
+    .navbar .left-side .product-search {
+        background-color: #f2f2f2;
+        color: #999999;
+        padding: 0 12px;
+        border: 1px solid #f2f2f2;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 500;
+        height: 30px;
+        width: 200px;
+        outline: 0;
+    }
+
+    .navbar .right-side {
+        float: right;
+    }
+
+    .navbar .right-side section > * {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+    }
+
+    .navbar .right-side a:hover {
+       color: #da552f;
+    }

@@ -19343,7 +19343,7 @@ var Navbar = function (_React$Component) {
             return _react2.default.createElement(
                 "a",
                 { href: "#" },
-                _react2.default.createElement("img", { src: "/img/doge.ico" })
+                _react2.default.createElement("img", { src: "/img/doge01.ico" })
             );
         }
     }, {
