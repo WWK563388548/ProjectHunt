@@ -9,7 +9,7 @@ class ProductList extends React.Component {
                 {
                     this.props.productList.map(function(item, idx){
                         return <ProductItem key={idx} {...item} />
-                    });
+                    })
                 }
             </ul>
         );

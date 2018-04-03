@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './homePage'
+import HomePage from './homePage';
+import Navbar from './navbar';
 
 class App extends React.Component {
     constructor() {
@@ -9,7 +10,10 @@ class App extends React.Component {
 
     render() {
         return(
-            <HomePage />
+            <section>
+                <Navbar />
+                <HomePage />
+            </section>
         );
     }
 }

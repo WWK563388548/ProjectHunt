@@ -19170,6 +19170,10 @@ var _homePage = require('./homePage');
 
 var _homePage2 = _interopRequireDefault(_homePage);
 
+var _navbar = require('./navbar');
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -19190,7 +19194,12 @@ var App = function (_React$Component) {
     _createClass(App, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_homePage2.default, null);
+            return _react2.default.createElement(
+                'section',
+                null,
+                _react2.default.createElement(_navbar2.default, null),
+                _react2.default.createElement(_homePage2.default, null)
+            );
         }
     }]);
 
@@ -19199,7 +19208,7 @@ var App = function (_React$Component) {
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
-},{"./homePage":26,"react":24,"react-dom":21}],26:[function(require,module,exports){
+},{"./homePage":26,"./navbar":27,"react":24,"react-dom":21}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19289,7 +19298,90 @@ var HomePage = function (_React$Component) {
 
 exports.default = HomePage;
 
-},{"../product/ProductList":28,"react":24}],27:[function(require,module,exports){
+},{"../product/ProductList":29,"react":24}],27:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Navbar = function (_React$Component) {
+    _inherits(Navbar, _React$Component);
+
+    function Navbar() {
+        _classCallCheck(this, Navbar);
+
+        return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).apply(this, arguments));
+    }
+
+    _createClass(Navbar, [{
+        key: "renderProductSearch",
+        value: function renderProductSearch() {
+            return _react2.default.createElement(
+                "section",
+                { className: "left-side" },
+                _react2.default.createElement("input", { className: "product-search", placeholder: "SEARCH" })
+            );
+        }
+    }, {
+        key: "renderLogo",
+        value: function renderLogo() {
+            return _react2.default.createElement(
+                "a",
+                { href: "#" },
+                _react2.default.createElement("img", { src: "/img/doge.ico" })
+            );
+        }
+    }, {
+        key: "renderUser",
+        value: function renderUser() {
+            return _react2.default.createElement(
+                "section",
+                { className: "right-side" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "#", className: "login-btn" },
+                    "LOGIN"
+                )
+            );
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                null,
+                _react2.default.createElement(
+                    "section",
+                    { className: "navbar" },
+                    this.renderProductSearch(),
+                    this.renderLogo(),
+                    this.renderUser()
+                )
+            );
+        }
+    }]);
+
+    return Navbar;
+}(_react2.default.Component);
+
+exports.default = Navbar;
+
+},{"react":24}],28:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19320,54 +19412,69 @@ var ProductItem = function (_React$Component) {
     }
 
     _createClass(ProductItem, [{
+        key: "renderUpvoteButton",
+        value: function renderUpvoteButton() {
+            return _react2.default.createElement(
+                "a",
+                { className: "upvote-button", href: "#" },
+                _react2.default.createElement(
+                    "span",
+                    null,
+                    _react2.default.createElement("i", { className: "fas fa-thumbs-up" })
+                ),
+                this.props.upvote
+            );
+        }
+    }, {
+        key: "renderNewWindowLinkIcon",
+        value: function renderNewWindowLinkIcon() {
+            return _react2.default.createElement(
+                "a",
+                { className: "product-item-link", href: this.props.link },
+                _react2.default.createElement(
+                    "span",
+                    null,
+                    _react2.default.createElement("i", { className: "fas fa-external-link-alt" })
+                )
+            );
+        }
+    }, {
+        key: "renderInfoSection",
+        value: function renderInfoSection() {
+            return _react2.default.createElement(
+                "section",
+                { className: "product-item-info" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "#" },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        this.props.name
+                    )
+                ),
+                _react2.default.createElement(
+                    "p",
+                    null,
+                    this.props.description
+                ),
+                _react2.default.createElement(
+                    "a",
+                    { href: "#" },
+                    _react2.default.createElement("img", { className: "small-avatar", src: this.props.maker.avatar })
+                )
+            );
+        }
+    }, {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
                 "li",
                 { className: "product-item" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "upvote-button", href: "#" },
-                    _react2.default.createElement(
-                        "span",
-                        null,
-                        _react2.default.createElement("i", { className: "fas fa-thumbs-up" })
-                    ),
-                    this.props.upvote
-                ),
+                this.renderUpvoteButton(),
                 _react2.default.createElement("img", { className: "product-item-media", src: this.props.media }),
-                _react2.default.createElement(
-                    "section",
-                    { className: "product-item-info" },
-                    _react2.default.createElement(
-                        "a",
-                        { href: "#" },
-                        _react2.default.createElement(
-                            "h2",
-                            null,
-                            this.props.name
-                        )
-                    ),
-                    _react2.default.createElement(
-                        "p",
-                        null,
-                        this.props.description
-                    ),
-                    _react2.default.createElement(
-                        "a",
-                        { href: "#" },
-                        _react2.default.createElement("img", { className: "small-avatar", src: this.props.maker.avatar })
-                    )
-                ),
-                _react2.default.createElement(
-                    "a",
-                    { className: "product-item-link", href: this.props.link },
-                    _react2.default.createElement(
-                        "span",
-                        null,
-                        _react2.default.createElement("i", { className: "fas fa-external-link-alt" })
-                    )
-                )
+                this.renderInfoSection(),
+                this.renderNewWindowLinkIcon()
             );
         }
     }]);
@@ -19377,12 +19484,14 @@ var ProductItem = function (_React$Component) {
 
 exports.default = ProductItem;
 
-},{"react":24}],28:[function(require,module,exports){
+},{"react":24}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -19414,26 +19523,12 @@ var ProductList = function (_React$Component) {
     _createClass(ProductList, [{
         key: 'render',
         value: function render() {
+            // 便利所有ProductItem并显示它们
             return _react2.default.createElement(
                 'ul',
                 { className: 'product-list' },
-                _react2.default.createElement(_ProductItem2.default, {
-                    id: this.props.productList[0].id,
-                    name: this.props.productList[0].name,
-                    link: this.props.productList[0].link,
-                    media: this.props.productList[0].media,
-                    upvote: this.props.productList[0].upvote,
-                    description: this.props.productList[0].description,
-                    maker: this.props.productList[0].maker
-                }),
-                _react2.default.createElement(_ProductItem2.default, {
-                    id: this.props.productList[1].id,
-                    name: this.props.productList[1].name,
-                    link: this.props.productList[1].link,
-                    media: this.props.productList[1].media,
-                    upvote: this.props.productList[1].upvote,
-                    description: this.props.productList[1].description,
-                    maker: this.props.productList[1].maker
+                this.props.productList.map(function (item, idx) {
+                    return _react2.default.createElement(_ProductItem2.default, _extends({ key: idx }, item));
                 })
             );
         }
@@ -19444,4 +19539,4 @@ var ProductList = function (_React$Component) {
 
 exports.default = ProductList;
 
-},{"./ProductItem":27,"react":24}]},{},[25]);
+},{"./ProductItem":28,"react":24}]},{},[25]);
