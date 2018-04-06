@@ -54,3 +54,5 @@ class PostPopup extends React.Component {
         ); 
     }
 }
+
+export default PostPopup;

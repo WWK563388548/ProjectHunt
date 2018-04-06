@@ -19197,7 +19197,7 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'section',
                 null,
-                _react2.default.createElement(_navbar2.default, null),
+                _react2.default.createElement(_navbar2.default, { user: true }),
                 _react2.default.createElement(_homePage2.default, null)
             );
         }
@@ -19208,7 +19208,7 @@ var App = function (_React$Component) {
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
-},{"./homePage":26,"./navbar":29,"react":24,"react-dom":21}],26:[function(require,module,exports){
+},{"./homePage":26,"./navbar":30,"react":24,"react-dom":21}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19298,12 +19298,14 @@ var HomePage = function (_React$Component) {
 
 exports.default = HomePage;
 
-},{"../product/ProductList":31,"react":24}],27:[function(require,module,exports){
+},{"../product/ProductList":32,"react":24}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -19337,7 +19339,7 @@ var LoginPopup = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 _Popup2.default,
-                this.props,
+                _extends({}, this.props, { style: 'login-popup' }),
                 _react2.default.createElement('img', { src: '/img/the-doge.ico' }),
                 _react2.default.createElement(
                     'h1',
@@ -19411,7 +19413,7 @@ var Popup = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     "section",
-                    { className: "popup-content login-popup" },
+                    { className: "popup-content " + this.props.style },
                     _react2.default.createElement(
                         "section",
                         null,
@@ -19443,6 +19445,162 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Popup = require('./Popup');
+
+var _Popup2 = _interopRequireDefault(_Popup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PostPopup = function (_React$Component) {
+    _inherits(PostPopup, _React$Component);
+
+    function PostPopup() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, PostPopup);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PostPopup.__proto__ || Object.getPrototypeOf(PostPopup)).call.apply(_ref, [this].concat(args))), _this), _this.handlePost = function () {}, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(PostPopup, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _Popup2.default,
+                _extends({}, this.props, { style: 'post-popup' }),
+                _react2.default.createElement(
+                    'header',
+                    null,
+                    'Post a new project'
+                ),
+                _react2.default.createElement(
+                    'section',
+                    null,
+                    _react2.default.createElement(
+                        'table',
+                        null,
+                        _react2.default.createElement(
+                            'tbody',
+                            null,
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Name'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement('input', { placeholder: 'Enter project\'s name' })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Name'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement('input', { placeholder: 'Enter project\'s name' })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Description'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement('input', { placeholder: 'Enter project\'s description' })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Link'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement('input', { placeholder: 'http://....' })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    'Media'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement('input', { placeholder: 'Paste a link to a image' })
+                                )
+                            )
+                        )
+                    )
+                ),
+                '\x1C',
+                _react2.default.createElement(
+                    'footer',
+                    { className: 'post-footer' },
+                    _react2.default.createElement(
+                        'button',
+                        { onclick: this.handlePost, className: 'post-btn' },
+                        'Post it!'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return PostPopup;
+}(_react2.default.Component);
+
+exports.default = PostPopup;
+
+},{"./Popup":28,"react":24}],30:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -19452,6 +19610,10 @@ var _react2 = _interopRequireDefault(_react);
 var _LoginPopup = require('./LoginPopup');
 
 var _LoginPopup2 = _interopRequireDefault(_LoginPopup);
+
+var _PostPopup = require('./PostPopup');
+
+var _PostPopup2 = _interopRequireDefault(_PostPopup);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19507,10 +19669,32 @@ var Navbar = function (_React$Component) {
             return _react2.default.createElement(
                 'section',
                 { className: 'right-side' },
+                this.props.user ?
+                // Display Post link here
                 _react2.default.createElement(
-                    'a',
-                    { href: '#', onClick: this.showPopup, className: 'login-btn' },
-                    'LOGIN'
+                    'section',
+                    null,
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '#', onClick: this.showPopup, className: 'login-btn' },
+                            'POST'
+                        )
+                    ),
+                    _react2.default.createElement(_PostPopup2.default, { status: this.state.popupStatus, hidePopup: this.hidePopup })
+                ) :
+                // Display Post link here
+                _react2.default.createElement(
+                    'section',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: '#', onClick: this.showPopup, className: 'login-btn' },
+                        'LOGIN'
+                    ),
+                    _react2.default.createElement(_LoginPopup2.default, { status: this.state.popupStatus, hidePopup: this.hidePopup })
                 )
             );
         }
@@ -19526,8 +19710,7 @@ var Navbar = function (_React$Component) {
                     this.renderProductSearch(),
                     this.renderLogo(),
                     this.renderUser()
-                ),
-                _react2.default.createElement(_LoginPopup2.default, { status: this.state.popupStatus, hidePopup: this.hidePopup })
+                )
             );
         }
     }]);
@@ -19537,7 +19720,7 @@ var Navbar = function (_React$Component) {
 
 exports.default = Navbar;
 
-},{"./LoginPopup":27,"react":24}],30:[function(require,module,exports){
+},{"./LoginPopup":27,"./PostPopup":29,"react":24}],31:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19640,7 +19823,7 @@ var ProductItem = function (_React$Component) {
 
 exports.default = ProductItem;
 
-},{"react":24}],31:[function(require,module,exports){
+},{"react":24}],32:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19695,4 +19878,4 @@ var ProductList = function (_React$Component) {
 
 exports.default = ProductList;
 
-},{"./ProductItem":30,"react":24}]},{},[25]);
+},{"./ProductItem":31,"react":24}]},{},[25]);

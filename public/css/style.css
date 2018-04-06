@@ -203,7 +203,6 @@ a {
 .navbar .right-side section > * {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 15px;
 }
 
 .navbar .right-side a:hover {
