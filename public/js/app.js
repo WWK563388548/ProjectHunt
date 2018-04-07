@@ -20045,7 +20045,16 @@ var ProductPopup = function (_React$Component) {
                     name: 'wwk',
                     avatar: '/img/portrait.jpg'
                 }
-            }
+            },
+            comments: [{
+                name: "wwk",
+                avatar: "/img/the-doge.png",
+                cotent: "Not good, I think that you should refactor your project."
+            }, {
+                name: "lilian",
+                avatar: "/img/the-doge.png",
+                cotent: "Nice project!"
+            }]
         };
         return _this;
     }
@@ -20112,7 +20121,8 @@ var ProductPopup = function (_React$Component) {
                     { className: 'post-comment' },
                     _react2.default.createElement('img', { className: 'medium-avatar', src: '/img/the-doge.png' }),
                     _react2.default.createElement('input', { placeholder: 'What do you think of this project?' })
-                )
+                ),
+                this.renderComments()
             );
         }
     }, {
@@ -20126,6 +20136,35 @@ var ProductPopup = function (_React$Component) {
                     null,
                     this.renderBodyDiscussion()
                 )
+            );
+        }
+    }, {
+        key: 'renderComments',
+        value: function renderComments() {
+            return _react2.default.createElement(
+                'ul',
+                { className: 'comment-list' },
+                this.state.comments.map(function (comment, idx) {
+                    return _react2.default.createElement(
+                        'li',
+                        { key: idx },
+                        _react2.default.createElement('img', { className: 'medium-avatar', src: comment.avatar }),
+                        _react2.default.createElement(
+                            'section',
+                            null,
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                comment.name
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                comment.cotent
+                            )
+                        )
+                    );
+                })
             );
         }
     }, {
