@@ -126,6 +126,12 @@ a {
     border-radius: 50%;
 }
 
+.medium-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
 /*---------------------------------------- UPVOTE BUTTON ----------------------------------------*/
 .upvote-button {
     font-weight: 600;
@@ -203,6 +209,7 @@ a {
 .navbar .right-side span > * {
     display: inline-block;
     vertical-align: middle;
+    margin-left: 10px;
 }
 
 .navbar .right-side a:hover {
@@ -316,4 +323,37 @@ button:hover {
     outline: 0;
     font-size: 13px;
     width: 100%;
+}
+
+/*---------------------------------------- PROFILEMENU -------------------------------------------*/
+.profile-menu .profile-btn {
+    opacity: 0.9;
+}
+
+.profile-menu .profile-btn:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.profile-menu .profile-nav {
+    position: fixed;
+    top: 55px;
+    right: 20px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.profile-menu .profile-nav a {
+    display: block;
+    width: 140px;
+    font-size: 15px;
+    line-height: 38px;
+    padding: 0 20px;
+    color: #bbbbbb;
+}
+
+.profile-menu .profile-nav a:hover {
+    background-color: #f2f2f2;
+    border-radius: 4px;
 }
