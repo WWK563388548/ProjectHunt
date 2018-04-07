@@ -19197,7 +19197,7 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'section',
                 null,
-                _react2.default.createElement(_navbar2.default, { user: true }),
+                _react2.default.createElement(_navbar2.default, { user: false }),
                 _react2.default.createElement(_homePage2.default, null)
             );
         }
@@ -19490,7 +19490,7 @@ var PostPopup = function (_React$Component) {
                 _extends({}, this.props, { style: 'post-popup' }),
                 _react2.default.createElement(
                     'header',
-                    null,
+                    { className: 'post-header' },
                     'Post a new project'
                 ),
                 _react2.default.createElement(

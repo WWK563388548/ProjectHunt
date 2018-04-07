@@ -10,7 +10,7 @@ class PostPopup extends React.Component {
     render() {
         return (
             <Popup {...this.props} style="post-popup">
-                <header>Post a new project</header>
+                <header className="post-header">Post a new project</header>
                 <section>
                     <table>
                         <tbody>
