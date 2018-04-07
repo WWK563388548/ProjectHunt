@@ -47,10 +47,33 @@ class ProductPopup extends React.Component {
         );
     }
 
+    renderBodyDiscussion() {
+        return (
+            <section className="discussion">
+                <h2>Discussion</h2>
+                <section className="post-comment">
+                    <img className="medium-avatar" src="/img/the-doge.png" />
+                    <input placeholder="What do you think of this project?" />
+                </section>
+            </section>
+        );
+    }
+
+    renderBody() {
+        return (
+            <section className="product-popup-body">
+                <main>
+                    {this.renderBodyDiscussion()}
+                </main>
+            </section>
+        );
+    }
+
     render() {
         return (
             <Popup {...this.props} style="product-popup">
                 {this.renderHeader()}
+                {this.renderBody()}
             </Popup>
         );
     }

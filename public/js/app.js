@@ -20097,12 +20097,45 @@ var ProductPopup = function (_React$Component) {
             );
         }
     }, {
+        key: 'renderBodyDiscussion',
+        value: function renderBodyDiscussion() {
+            return _react2.default.createElement(
+                'section',
+                { className: 'discussion' },
+                _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Discussion'
+                ),
+                _react2.default.createElement(
+                    'section',
+                    { className: 'post-comment' },
+                    _react2.default.createElement('img', { className: 'medium-avatar', src: '/img/the-doge.png' }),
+                    _react2.default.createElement('input', { placeholder: 'What do you think of this project?' })
+                )
+            );
+        }
+    }, {
+        key: 'renderBody',
+        value: function renderBody() {
+            return _react2.default.createElement(
+                'section',
+                { className: 'product-popup-body' },
+                _react2.default.createElement(
+                    'main',
+                    null,
+                    this.renderBodyDiscussion()
+                )
+            );
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 _Popup2.default,
                 _extends({}, this.props, { style: 'product-popup' }),
-                this.renderHeader()
+                this.renderHeader(),
+                this.renderBody()
             );
         }
     }]);
