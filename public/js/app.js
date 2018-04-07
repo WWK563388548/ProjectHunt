@@ -19197,7 +19197,7 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'section',
                 null,
-                _react2.default.createElement(_navbar2.default, { user: false }),
+                _react2.default.createElement(_navbar2.default, { user: true }),
                 _react2.default.createElement(_homePage2.default, null)
             );
         }
@@ -19208,7 +19208,7 @@ var App = function (_React$Component) {
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
-},{"./homePage":26,"./navbar":30,"react":24,"react-dom":21}],26:[function(require,module,exports){
+},{"./homePage":26,"./navbar":31,"react":24,"react-dom":21}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19298,7 +19298,7 @@ var HomePage = function (_React$Component) {
 
 exports.default = HomePage;
 
-},{"../product/ProductList":32,"react":24}],27:[function(require,module,exports){
+},{"../product/ProductList":33,"react":24}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19595,6 +19595,71 @@ var PostPopup = function (_React$Component) {
 exports.default = PostPopup;
 
 },{"./Popup":28,"react":24}],30:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProfileMenu = function (_React$Component) {
+    _inherits(ProfileMenu, _React$Component);
+
+    function ProfileMenu() {
+        _classCallCheck(this, ProfileMenu);
+
+        return _possibleConstructorReturn(this, (ProfileMenu.__proto__ || Object.getPrototypeOf(ProfileMenu)).apply(this, arguments));
+    }
+
+    _createClass(ProfileMenu, [{
+        key: "renderProfileNav",
+        value: function renderProfileNav() {
+            return _react2.default.createElement(
+                "nav",
+                { className: "profile-nav", ref: "profileNav" },
+                _react2.default.createElement(
+                    "a",
+                    { href: "#" },
+                    "My Profile"
+                ),
+                _react2.default.createElement(
+                    "a",
+                    { href: "#" },
+                    "Logout"
+                )
+            );
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                { className: "profile-menu" },
+                _react2.default.createElement("img", { src: "/img/the-doge.png", className: "profile-btn medium-avatar" }),
+                this.renderProfileNav()
+            );
+        }
+    }]);
+
+    return ProfileMenu;
+}(_react2.default.Component);
+
+exports.default = ProfileMenu;
+
+},{"react":24}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19614,6 +19679,10 @@ var _LoginPopup2 = _interopRequireDefault(_LoginPopup);
 var _PostPopup = require('./PostPopup');
 
 var _PostPopup2 = _interopRequireDefault(_PostPopup);
+
+var _ProfileMenu = require('./ProfileMenu');
+
+var _ProfileMenu2 = _interopRequireDefault(_ProfileMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19681,7 +19750,8 @@ var Navbar = function (_React$Component) {
                             'a',
                             { href: '#', onClick: this.showPopup, className: 'login-btn' },
                             'POST'
-                        )
+                        ),
+                        _react2.default.createElement(_ProfileMenu2.default, null)
                     ),
                     _react2.default.createElement(_PostPopup2.default, { status: this.state.popupStatus, hidePopup: this.hidePopup })
                 ) :
@@ -19720,7 +19790,7 @@ var Navbar = function (_React$Component) {
 
 exports.default = Navbar;
 
-},{"./LoginPopup":27,"./PostPopup":29,"react":24}],31:[function(require,module,exports){
+},{"./LoginPopup":27,"./PostPopup":29,"./ProfileMenu":30,"react":24}],32:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19823,7 +19893,7 @@ var ProductItem = function (_React$Component) {
 
 exports.default = ProductItem;
 
-},{"react":24}],32:[function(require,module,exports){
+},{"react":24}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19878,4 +19948,4 @@ var ProductList = function (_React$Component) {
 
 exports.default = ProductList;
 
-},{"./ProductItem":31,"react":24}]},{},[25]);
+},{"./ProductItem":32,"react":24}]},{},[25]);
