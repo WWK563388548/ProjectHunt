@@ -27,6 +27,7 @@
     "babelify": "^8.0.0",
     "browserify": "^16.1.1",
     "express": "^4.16.3",
+    "firebase": "^4.12.1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "watch": "^1.0.2"
