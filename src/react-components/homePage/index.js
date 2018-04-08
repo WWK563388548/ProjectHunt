@@ -1,37 +1,32 @@
 import React from 'react';
 import ProductList from '../product/ProductList';
+import Firebase from 'firebase';
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDxrsFrtle4ufkO-ufUohOQ1UI8yNIds0I",
+    authDomain: "projecthunt-e4744.firebaseapp.com",
+    databaseURL: "https://projecthunt-e4744.firebaseio.com",
+    projectId: "projecthunt-e4744",
+    storageBucket: "projecthunt-e4744.appspot.com",
+    messagingSenderId: "932476477857"
+  };
+  Firebase.initializeApp(config);
 
 class HomePage extends React.Component {
     constructor() {
         super();
         this.state = {
-            productList: [
-                {
-                    id: 1,
-                    name: 'NicePoint',
-                    link: 'https://github.com/WWK563388548/NicePoint',
-                    media: '/img/nicepoint.gif',
-                    upvote: 10,
-                    description: 'A chinese restaurant review web application',
-                    maker: {
-                        name: 'wwk',
-                        avatar: '/img/portrait.jpg'
-                    }
-                },
-                {
-                    id: 2,
-                    name: 'ShareCode.io',
-                    link: 'https://github.com/WWK563388548/ShareCode.io',
-                    media: '/img/ShareCode.gif',
-                    upvote: 30,
-                    description: 'A collaborative editor with video call',
-                    maker: {
-                        name: 'wwk',
-                        avatar: '/img/portrait.jpg'
-                    }
-                }
-            ]
+            productList: []
         }
+
+        Firebase.database().ref('products').on('value', (snapshot) => {
+            var products = snapshot.val();
+
+            this.setState({
+                productList: products
+            })
+        });
     }
 
     render() {
