@@ -45303,6 +45303,10 @@ var _Popup = require('./Popup');
 
 var _Popup2 = _interopRequireDefault(_Popup);
 
+var _firebase = require('firebase');
+
+var _firebase2 = _interopRequireDefault(_firebase);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45315,9 +45319,27 @@ var LoginPopup = function (_React$Component) {
     _inherits(LoginPopup, _React$Component);
 
     function LoginPopup() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, LoginPopup);
 
-        return _possibleConstructorReturn(this, (LoginPopup.__proto__ || Object.getPrototypeOf(LoginPopup)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginPopup.__proto__ || Object.getPrototypeOf(LoginPopup)).call.apply(_ref, [this].concat(args))), _this), _this.handleLogin = function () {
+            var provider = new _firebase2.default.auth.FacebookAuthProvider();
+            provider.addScope('public_profile');
+
+            _firebase2.default.auth().signInWithPopup(provider).then(function (result) {
+                var user = result.user;
+                console.log('Login successfully!', user);
+            }).catch(function (error) {
+                console.log('Failed!', error);
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(LoginPopup, [{
@@ -45339,7 +45361,7 @@ var LoginPopup = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'button',
-                    { className: 'facebook-btn' },
+                    { className: 'facebook-btn', onClick: this.handleLogin },
                     'Login with Facebook'
                 ),
                 _react2.default.createElement(
@@ -45356,7 +45378,7 @@ var LoginPopup = function (_React$Component) {
 
 exports.default = LoginPopup;
 
-},{"./Popup":193,"react":188}],193:[function(require,module,exports){
+},{"./Popup":193,"firebase":175,"react":188}],193:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
