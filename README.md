@@ -1,6 +1,9 @@
 # ProjectHunt
 ## A web application (It looks like "product hunt") that is a Community to share and geek out about the code and project.
+<br>
 
+![image](screenshot/projecthunt.gif)
+<br>
 <hr>
 This application was created by: 
 <br>
